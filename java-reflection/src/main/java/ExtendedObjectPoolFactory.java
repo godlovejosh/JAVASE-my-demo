@@ -15,8 +15,8 @@ public class ExtendedObjectPoolFactory {
 
     public void init(String fileName) {
         try(
-                FileInputStream fis = new FileInputStream(fileName)
-                ) {
+            FileInputStream fis = new FileInputStream(fileName)
+        ) {
             config.load(fis);
         } catch (IOException ex) {
             System.out.println("读取" + fileName + "异常");
@@ -57,7 +57,7 @@ public class ExtendedObjectPoolFactory {
 
     public static void main(String[] args) throws Exception {
         ExtendedObjectPoolFactory epf = new ExtendedObjectPoolFactory();
-        epf.init("/Users/josh/Private/Github/wuxing/JAVASE-my-demo/src/main/java/extObj.txt");
+        epf.init("/Users/josh/Private/Github/wuxing/JAVASE-my-demo/java-reflection/src/main/resource/extObj.txt");
         epf.initPool();
         epf.initProperty();
         System.out.println(epf.getObject("a"));
